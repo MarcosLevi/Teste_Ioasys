@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/telaLogin">
+
+    <fragment
+        android:id="@+id/telaLogin"
+        android:name="com.example.testeioasys.fragments.Login"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_telaLogin_to_telaHome"
+            app:destination="@id/telaHome" />
+    </fragment>
+    <fragment
+        android:id="@+id/telaHome"
+        android:name="com.example.testeioasys.fragments.Home"
+        android:label="Home" >
+        <action
+            android:id="@+id/action_telaHome_to_telaEmpresa"
+            app:destination="@id/telaEmpresa" />
+    </fragment>
+    <fragment
+        android:id="@+id/telaEmpresa"
+        android:name="com.example.testeioasys.fragments.Empresa"
+        android:label="fragment_empresa"
+        tools:layout="@layout/fragment_empresa" >
+        <argument android:name="empresa"
+            app:argType="com.example.testeioasys.models.EnterpriseDto" />
+        <action
+            android:id="@+id/action_telaEmpresa_to_telaHome"
+            app:destination="@id/telaHome" />
+    </fragment>
+</navigation>
